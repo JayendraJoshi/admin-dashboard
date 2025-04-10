@@ -34,19 +34,56 @@ svg,
 video {
   display: block;
   max-width: 100%;
+  height: 1vh;
 }
 
 aside{
     grid-column: 1;
     grid-row: 1 / 3;
     background-color: lightskyblue;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 6fr 3fr;
 }
 header{
     grid-column: 2;
+    grid-row: 1;
     background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.searchbar-container{
+  grid-column: 1;
+  grid-row: 1;
+}
+.profile-controls-container{
+  grid-column: 2;
+  grid-row: 1;
+}
+.greet-message-container{
+  grid-column: 1;
 }
 main{
     background-color: aliceblue;
+    grid-row:2;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: 1fr 1fr;
+}
+.projects-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 3fr 3fr 3fr;
+  grid-row: 1 / 3;
+}
+.announcements-container{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.trending-container{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 
