@@ -23,8 +23,8 @@ html {
 body {
   height: 100vh;
   display:grid;
-  grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr 8fr;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 6fr;
   font-family: 'Roboto',sans-serif;
 }
 
@@ -94,19 +94,65 @@ header{
     grid-row: 1;
     background-color: white;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
+    padding-bottom: 0.5rem;
 }
 .searchbar-container{
   grid-column: 1;
   grid-row: 1;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 2rem;
+  align-items: center;
+  gap:0.5rem;
+}
+.searchbar-container input{
+  width: 70%;
+  border-radius: 10px;
+  border-style: none;
+  background-color: #e2e8f0;
+  height: 30px;
 }
 .profile-controls-container{
   grid-column: 2;
   grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:1.5rem;
+}
+.profile-controls-container img{
+  height: 30px;
+  width: 30px;
+}
+header img{
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
 }
 .greet-message-container{
   grid-column: 1;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 2rem;
+  gap:1rem;
+}
+.greet-message-container p{
+  align-self: center;
+}
+.buttons-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+}
+.buttons-container button{
+  padding: 5px 25px;
+  border-radius: 20px;
+  border-style: none;
+  color: white;
+  background-color: #1992d4;
 }
 main{
     background-color: #e2e8f0;
