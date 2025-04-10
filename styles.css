@@ -25,6 +25,7 @@ body {
   display:grid;
   grid-template-columns: 1fr 5fr;
   grid-template-rows: 1fr 8fr;
+  font-family: 'Roboto',sans-serif;
 }
 
 /* responsive images/videos */
@@ -32,18 +33,61 @@ img,
 picture,
 svg,
 video {
-  display: block;
   max-width: 100%;
-  height: 1vh;
+  height: 2.5vh;
 }
-
+a{
+  display: block;
+}
 aside{
     grid-column: 1;
     grid-row: 1 / 3;
-    background-color: lightskyblue;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 6fr 3fr;
+    grid-template-rows: 1fr 4fr 8fr;
+    color: white;
+    background-color: #1992d4;
+    gap:1.5rem;
+}
+aside svg{
+  fill: white;
+}
+.dashboard-icon{
+  font-size: 2rem;
+  padding-left: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap:0.5rem;
+}
+.dashboard-icon > svg{
+  height: 4vh;
+}
+.page-links{
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  padding:0 0 1rem 0;
+  align-items: center;
+  gap:0.5rem;
+  
+}
+.page-links > a{
+  display: flex;
+  align-items: center;
+  gap:1rem;
+  padding-left: 1rem;
+}
+.settings-and-support{
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  height: fit-content;
+  gap:1rem;
+}
+.settings-and-support > a {
+  display: flex;
+  align-items: center;
+  gap:1rem;
+  padding-left: 1rem;
 }
 header{
     grid-column: 2;
@@ -65,7 +109,7 @@ header{
   grid-column: 1;
 }
 main{
-    background-color: aliceblue;
+    background-color: #e2e8f0;
     grid-row:2;
     display: grid;
     grid-template-columns: 1fr 0.5fr;
