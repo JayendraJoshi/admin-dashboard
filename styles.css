@@ -158,22 +158,63 @@ main{
     background-color: #e2e8f0;
     grid-row:2;
     display: grid;
-    grid-template-columns: 1fr 0.5fr;
+    grid-template-columns: 1.5fr 0.5fr;
     grid-template-rows: 1fr 1fr;
+    gap:1rem;
+    padding: 2.5rem 1.5rem 3rem 1rem;
 }
-.projects-container{
+.projects-area{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.5fr 3fr 3fr 3fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 9.5fr;
   grid-row: 1 / 3;
 }
-.announcements-container{
+.projects-cards-container{
   display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  gap:1rem;
+  border:1px solid yellow;
 }
-.trending-container{
+.projects-cards-container div{
+  background-color: white;
+  border-left: 8px solid #ebbb4c;
+  border-radius: 10px;
+}
+.projects-area > p{
+  grid-column: 1/3;
+}
+.announcements-area{
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 5fr;
+}
+.announcements-cards-container{
+  display: grid;
+  grid-template-rows: 1fr 3fr 3fr;
+  padding: 2rem 1rem 0rem 1rem;
+  border-radius: 10px;
+}
+.announcements-area div{
+  background-color: white;
+  
+}
+.trending-area{
+  display: grid;
+  grid-template-rows: 0.5fr 5fr;
+}
+.trending-cards-container{
+  display: grid;
+  grid-template-rows: 0.5fr 1.5fr 1.5fr 1.5fr;
+  padding: 0 1rem 2rem 1rem;
+  border-radius: 10px;
+}
+.trending-area div{
+  background-color: white;
+  
+
+}
+.announcements-area,.trending-area{
+  border-radius: 10px;
 }
 
 
