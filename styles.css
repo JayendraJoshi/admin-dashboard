@@ -24,7 +24,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 6fr;
+  grid-template-rows: 1fr 4fr;
   font-family: "Roboto", sans-serif;
 }
 
@@ -160,7 +160,8 @@ main {
   grid-template-columns: 1.5fr 0.5fr;
   grid-template-rows: 1fr 1fr;
   gap: 1rem;
-  padding: 2.5rem 1.5rem 3rem 1rem;
+  padding: 2.5rem 2rem 3rem 1.5rem;
+  height: 100%;
 }
 main > div > p{
   font-size: 1.2rem;
@@ -206,13 +207,14 @@ main > div > p{
   display: grid;
   grid-template-rows: auto 1fr;
   grid-row: 1;
-  height: 100%;
   gap:0.5rem;
+  margin-bottom: 1rem;
 }
+
 .announcements-cards-container {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  grid-template-rows: auto auto auto;
+  padding: 2rem 1.5rem 2rem 1.5rem;
   border-radius: 10px;
 }
 .announcements-area div {
@@ -221,12 +223,21 @@ main > div > p{
 .announcements-cards-container > .announcement-card:first-child{
   border-top: none;
 }
+.announcement-card:not(:last-child) {
+  padding-bottom: 1.5rem; /* Space below content before border */
+}
+.announcement-card:not(:first-child) {
+  border-top: 1px solid #eaeaea;
+  padding-top: 1.5rem;
+}
 .announcement-card{
   border-top: 1px solid #eaeaea;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
-.announcement-card p{
-  color: rgba(0, 0, 0, 0.5); 
+.announcement-card p {
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0; /* Remove default margins */
 }
 .announcement-card h3{
   font-weight: 600;
@@ -236,18 +247,38 @@ main > div > p{
   display: grid;
   grid-template-rows: auto 1fr;
   gap:0.5rem;
+  margin-top: 1rem;
 }
 .trending-cards-container {
   display: grid;
-  grid-template-rows: 0.5fr 1.5fr 1.5fr 1.5fr;
-  padding: 0 1rem 2rem 1rem;
+  grid-template-rows: auto auto auto auto;
+  padding: 1rem 2rem 2rem 1.5rem;
   border-radius: 10px;
+  gap:1.5rem;
 }
 .trending-area div {
   background-color: white;
 }
 .trending-cards h3{
   font-weight: 600;
+}
+.trend-card{
+  display: flex;
+  align-items: flex-end;
+  gap:1rem;
+  justify-content: flex-start;
+}
+.trend-card img{
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.trend-card p{
+  color: rgba(0, 0, 0, 0.5);
+}
+.trend-card p span {
+  color: black;
 }
 .announcements-area,
 .trending-area {
