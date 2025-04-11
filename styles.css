@@ -3,31 +3,21 @@
 *::after {
   box-sizing: border-box;
 }
-
-/* remove default spacing */
-/* force styling of type through styling, rather than elements */
 * {
   margin: 0;
   padding: 0;
   font: inherit;
 }
-
-/* dark mode user-agent-styles */
-
 html {
   color-scheme: dark light;
 }
-
-/* min body height */
-
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 4fr;
+  grid-template-columns: 1fr 6fr;
+  grid-template-rows: 1fr 5.5fr;
   font-family: "Roboto", sans-serif;
 }
-
 /* responsive images/videos */
 img,
 picture,
@@ -35,46 +25,58 @@ svg,
 video {
   max-width: 100%;
   height: 2.5vh;
+  cursor: pointer;
 }
 a {
   display: block;
+  cursor: pointer;
+}
+.name, button, input{
+  cursor: pointer;
 }
 aside {
   grid-column: 1;
   grid-row: 1 / 3;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 4fr 8fr;
+  grid-template-rows: 1fr 3fr 8fr;
   color: white;
   background-color: #1992d4;
-  gap: 1.5rem;
+  font-weight: bold;
+  gap:1rem;
+  padding-right: 1rem;
 }
 aside svg {
   fill: white;
 }
 .dashboard-icon {
-  font-size: 2rem;
-  padding-left: 0.5rem;
+  font-size: 1.8rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
+  padding-left: 1rem;
 }
 .dashboard-icon > svg {
-  height: 4vh;
+  height: 2vw;
+  min-width: 30px;
+  min-height: 30px;
+}
+.page-links,.settings-and-support{
+  padding-left: 1.5rem;
 }
 .page-links {
   display: grid;
   grid-template-rows: repeat(6, 1fr);
-  padding: 0 0 1rem 0;
   align-items: center;
-  gap: 0.5rem;
+  height: fit-content;
+  gap: 1rem;
 }
 .page-links > a {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding-left: 1rem;
+  height: 100%;
 }
 .settings-and-support {
   display: grid;
@@ -86,7 +88,6 @@ aside svg {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding-left: 1rem;
 }
 header {
   grid-column: 2;
@@ -95,7 +96,7 @@ header {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
 }
 .searchbar-container {
   grid-column: 1;
@@ -140,6 +141,10 @@ header img {
 .greet-message-container p {
   align-self: center;
 }
+.greet-message-username{
+  font-size: 1.3rem;
+  font-weight: bold;
+}
 .buttons-container {
   display: flex;
   justify-content: center;
@@ -159,11 +164,10 @@ main {
   display: grid;
   grid-template-columns: 1.5fr 0.5fr;
   grid-template-rows: 1fr 1fr;
-  gap: 1rem;
-  padding: 2.5rem 2rem 3rem 1.5rem;
-  height: 100%;
+  gap: 1.5rem;
+  padding: 2rem 2rem 4rem 1.5rem;
 }
-main > div > p{
+main > div > p {
   font-size: 1.2rem;
 }
 .projects-area {
@@ -171,13 +175,13 @@ main > div > p{
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   grid-row: 1 / 3;
-  gap:0.5rem;
+  gap: 0.5rem;
 }
 .projects-cards-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 .projects-cards-container > div {
   background-color: white;
@@ -185,29 +189,29 @@ main > div > p{
   border-radius: 10px;
 }
 .card {
-  padding: 2rem 1rem;
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
 }
-.card h4{
-  font-weight:600;
+.card h4 {
+  font-weight: 600;
   margin-bottom: 0.1rem;
 }
-.card p{
-  color: rgba(0, 0, 0, 0.5); 
+.card p {
+  color: rgba(0, 0, 0, 0.5);
 }
-.svg-container{
+.svg-container {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  gap:1.5rem;
+  gap: 1.5rem;
   margin-top: auto;
 }
 .announcements-area {
   display: grid;
   grid-template-rows: auto 1fr;
   grid-row: 1;
-  gap:0.5rem;
+  gap: 0.5rem;
   margin-bottom: 1rem;
 }
 
@@ -220,7 +224,7 @@ main > div > p{
 .announcements-area div {
   background-color: white;
 }
-.announcements-cards-container > .announcement-card:first-child{
+.announcements-cards-container > .announcement-card:first-child {
   border-top: none;
 }
 .announcement-card:not(:last-child) {
@@ -230,7 +234,7 @@ main > div > p{
   border-top: 1px solid #eaeaea;
   padding-top: 1.5rem;
 }
-.announcement-card{
+.announcement-card {
   border-top: 1px solid #eaeaea;
   display: flex;
   flex-direction: column;
@@ -239,14 +243,14 @@ main > div > p{
   color: rgba(0, 0, 0, 0.5);
   margin: 0; /* Remove default margins */
 }
-.announcement-card h3{
+.announcement-card h3 {
   font-weight: 600;
   color: black;
 }
 .trending-area {
   display: grid;
   grid-template-rows: auto 1fr;
-  gap:0.5rem;
+  gap: 0.5rem;
   margin-top: 1rem;
 }
 .trending-cards-container {
@@ -254,27 +258,27 @@ main > div > p{
   grid-template-rows: auto auto auto auto;
   padding: 1rem 2rem 2rem 1.5rem;
   border-radius: 10px;
-  gap:1.5rem;
+  gap: 1.5rem;
 }
 .trending-area div {
   background-color: white;
 }
-.trending-cards h3{
+.trending-cards h3 {
   font-weight: 600;
 }
-.trend-card{
+.trend-card {
   display: flex;
   align-items: flex-end;
-  gap:1rem;
+  gap: 1rem;
   justify-content: flex-start;
 }
-.trend-card img{
+.trend-card img {
   height: 45px;
   width: 45px;
   border-radius: 50%;
   object-fit: cover;
 }
-.trend-card p{
+.trend-card p {
   color: rgba(0, 0, 0, 0.5);
 }
 .trend-card p span {
