@@ -25,16 +25,24 @@ video {
   height: 2.5vh;
   cursor: pointer;
 }
-/* general link, button, input styling */
+/* general elements styling */
 a {
   display: block;
   cursor: pointer;
 }
 .name,
 button,
-input {
+input,
+h3,
+h4{
   cursor: pointer;
 }
+
+button:active, a:active,img:active,svg:active,input:active, .name:active,h3:active,h3:active{
+  transform: scale(0.95); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
 /* sidebar styling */
 aside {
   grid-column: 1;
@@ -182,6 +190,10 @@ main > .trending-area {
 main > div > p {
   font-size: 1.2rem;
 }
+.project-card, .announcements-cards-container, .trending-cards-container{
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 10px;
+}
 /* project area & children elements styling */
 .projects-area {
   display: grid;
@@ -314,7 +326,4 @@ main > div > p {
   .trending-cards-container{
     padding: 2rem 1rem;
   }
-}
-@media (max-width:1180px){
-
 }
