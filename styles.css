@@ -13,7 +13,7 @@
 body {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: minmax(13.5rem,1fr) 6fr;
+  grid-template: auto 4fr / 1fr 4fr;
   font-family: "Roboto", sans-serif;
 }
 /* responsive images/videos */
@@ -34,13 +34,20 @@ a {
 button,
 input,
 h3,
-h4{
+h4 {
   cursor: pointer;
 }
 
-button:active, a:active,img:active,svg:active,input:active, .name:active,h3:active,h3:active{
-  transform: scale(0.95); 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+button:active,
+a:active,
+img:active,
+svg:active,
+input:active,
+.name:active,
+h3:active,
+h3:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* sidebar styling */
@@ -48,7 +55,7 @@ aside {
   grid-column: 1;
   grid-row: 1 / 3;
   display: grid;
-  grid-template-rows: minmax(5rem,5rem) minmax(18rem,18rem) minmax(auto,auto);  
+  grid-template-rows: minmax(5rem, 5rem) minmax(18rem, 18rem) minmax(auto, auto);
   align-items: flex-start;
   grid-auto-rows: auto;
   gap: 1rem;
@@ -119,7 +126,7 @@ header {
 }
 .searchbar-container input {
   height: 30px;
-  width: clamp(2rem,45vw,45rem);
+  width: clamp(2rem, 45vw, 45rem);
   border-radius: 10px;
   border-style: none;
   background-color: #e2e8f0;
@@ -128,7 +135,7 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: clamp(1rem,2vw,1.5rem);
+  gap: clamp(1rem, 2vw, 1.5rem);
   padding-right: 5rem;
 }
 .profile-controls-container img {
@@ -157,7 +164,7 @@ header img {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: clamp(1rem,2vw,1.2rem);
+  gap: clamp(1rem, 2vw, 1.2rem);
   padding-right: 2rem;
 }
 .buttons-container button {
@@ -171,9 +178,9 @@ header img {
 main {
   display: grid;
   grid-template-columns: 1.5fr 0.5fr;
-  grid-template-areas: 
-  'project announcement'
-  'project trending';
+  grid-template-areas:
+    "project announcement"
+    "project trending";
   gap: 1.5rem;
   padding: 2rem 2rem 4rem 1.5rem;
   background-color: #e2e8f0;
@@ -190,7 +197,9 @@ main > .trending-area {
 main > div > p {
   font-size: 1.2rem;
 }
-.project-card, .announcements-cards-container, .trending-cards-container{
+.project-card,
+.announcements-cards-container,
+.trending-cards-container {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   border-radius: 10px;
 }
@@ -202,19 +211,26 @@ main > div > p {
 }
 .projects-cards-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 1fr;
   gap: 1.5rem;
+  height: 100%;
+}
+
+.projects-cards-container > div {
+  height: 100%;
 }
 .projects-cards-container > div {
   border-left: 8px solid #ebbb4c;
   border-radius: 10px;
   background-color: white;
+  height: 100%;
 }
 .project-card {
   display: flex;
   flex-direction: column;
   padding: 2.5rem 2rem;
+  height: 100%;
 }
 .project-card h4 {
   font-weight: 600;
@@ -235,6 +251,7 @@ main > div > p {
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 0.5rem;
+  height: 100%;
 }
 
 .announcements-cards-container {
@@ -305,25 +322,28 @@ main > div > p {
   color: black;
 }
 
-@media (max-width:1365px){
-  main{
-    grid-template-areas: 
-    'project project'
-    'announcement trending'
-    ;
+@media (max-width: 1365px) {
+  main {
+    grid-template-areas:
+      "project"
+      "announcement"
+      "trending";
+    grid-template-columns: 1fr;
   }
-  .projects-cards-container{
-    grid-template-columns: auto;
-    grid-auto-rows: auto;
+  .projects-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 1fr;
   }
-  .project-card, .announcement-cards-container, .trending-card{
+  .project-card,
+  .announcement-cards-container,
+  .trending-card {
     padding: 1.5rem 1rem;
   }
-  .project-card{
+  .project-card {
     flex-wrap: wrap;
-
+    word-break: break-word;
   }
-  .trending-cards-container{
+  .trending-cards-container {
     padding: 2rem 1rem;
   }
 }
