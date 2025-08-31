@@ -63,6 +63,7 @@ aside {
   font-weight: bold;
   background-color: #1992d4;
   color: white;
+  min-width: 180px;
 }
 aside svg {
   fill: white;
@@ -72,12 +73,12 @@ aside svg {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 1.8rem;
+  font-size: 1.5vw;
   gap: 0.5rem;
   padding-left: 1rem;
 }
 .dashboard-icon > svg {
-  height: 2.5rem;
+  height: clamp(1.5rem,3vh,2.5rem);
   flex-shrink: 0;
 }
 .page-links,
@@ -229,12 +230,12 @@ main > div > p {
 .project-card {
   display: flex;
   flex-direction: column;
-  padding: 2.5rem 2rem;
+  padding: 2rem 1.5rem;
   height: 100%;
 }
 .project-card h4 {
   font-weight: 600;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.5rem;
 }
 .project-card p {
   color: rgba(0, 0, 0, 0.5);
@@ -322,28 +323,4 @@ main > div > p {
   color: black;
 }
 
-@media (max-width: 1365px) {
-  main {
-    grid-template-areas:
-      "project"
-      "announcement"
-      "trending";
-    grid-template-columns: 1fr;
-  }
-  .projects-cards-container {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: 1fr;
-  }
-  .project-card,
-  .announcement-cards-container,
-  .trending-card {
-    padding: 1.5rem 1rem;
-  }
-  .project-card {
-    flex-wrap: wrap;
-    word-break: break-word;
-  }
-  .trending-cards-container {
-    padding: 2rem 1rem;
-  }
-}
+
