@@ -13,7 +13,7 @@
 body {
   min-height: 100vh;
   display: grid;
-  grid-template: auto 4fr / 1fr 4fr;
+  grid-template: auto 1fr / 200px minmax(0, 1fr); 
   font-family: "Roboto", sans-serif;
 }
 /* responsive images/videos */
@@ -44,7 +44,6 @@ img:active,
 svg:active,
 input:active,
 .name:active,
-h3:active,
 h3:active {
   transform: scale(0.95);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -63,7 +62,7 @@ aside {
   font-weight: bold;
   background-color: #1992d4;
   color: white;
-  min-width: 180px;
+  min-width: 200px;
 }
 aside svg {
   fill: white;
@@ -127,7 +126,7 @@ header {
 }
 .searchbar-container input {
   height: 30px;
-  width: clamp(2rem, 45vw, 45rem);
+  width: 70%;
   border-radius: 10px;
   border-style: none;
   background-color: #e2e8f0;
@@ -178,7 +177,7 @@ header img {
 /* main styling */
 main {
   display: grid;
-  grid-template-columns: 1.5fr 0.5fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-areas:
     "project announcement"
     "project trending";
@@ -212,10 +211,8 @@ main > div > p {
 }
 .projects-cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 1.5rem;
-  height: 100%;
 }
 
 .projects-cards-container > div {
@@ -323,4 +320,9 @@ main > div > p {
   color: black;
 }
 
-
+@media screen and (max-width:1100px){
+   main {
+    grid-template-columns: 1fr;
+    grid-template-areas: "project" "announcement" "trending";
+  }
+}
