@@ -72,7 +72,7 @@ aside svg {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 1.5vw;
+  font-size: 1.2rem;
   gap: 0.5rem;
   padding-left: 1rem;
 }
